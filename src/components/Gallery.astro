@@ -1,0 +1,54 @@
+---
+const images = [
+  { src: '/images/gallery-01.png', alt: 'Dense city skyline at dusk', tag: 'São Paulo', span: 'lg:row-span-2' },
+  { src: '/images/gallery-02.png', alt: 'Foggy green valley with winding streams', tag: 'South Tyrol' },
+  { src: '/images/gallery-03.png', alt: 'Deep blue ocean horizon', tag: 'Azores' },
+  { src: '/images/gallery-04.png', alt: 'Black and white study of a stone ruin', tag: 'Study, No. 12' },
+  { src: '/images/gallery-05.png', alt: 'Snow-capped mountain above the clouds', tag: 'New Zealand' },
+  { src: '/images/gallery-06.png', alt: 'Street level view between glass skyscrapers with a bus passing', tag: 'São Paulo' },
+];
+---
+
+<section id="gallery" class="section-pad bg-stone-100 py-24 lg:py-32">
+  <div class="mx-auto max-w-content">
+    <div data-reveal class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow">Gallery</p>
+        <h2 class="mt-5 max-w-lg text-4xl leading-tight text-ink sm:text-5xl">
+          A working archive, not a highlight reel.
+        </h2>
+      </div>
+      <p class="max-w-xs text-sm leading-relaxed text-ink/60">
+        Selected frames from recent assignments and personal studies, shown
+        largely unedited &mdash; the way they left the camera.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
+      {
+        images.map((img, i) => (
+          <a
+            href={img.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-reveal
+            style={`transition-delay: ${i * 70}ms;`}
+            class={`group relative block overflow-hidden rounded-2xl bg-ink/5 ${img.span ?? ''}`}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="h-full min-h-[220px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div class="pointer-events-none absolute bottom-4 left-4 flex translate-y-2 items-center gap-2 font-mono text-[11px] uppercase tracking-widest2 text-stone-50 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <span class="h-1.5 w-1.5 rounded-full bg-brass-400"></span>
+              {img.tag}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,154 @@
+---
+const projectTypes = ['Portrait session', 'Wedding', 'Editorial / Magazine', 'Brand & product', 'Other'];
+---
+
+<section id="contact" class="section-pad bg-stone-100 py-24 lg:py-32">
+  <div class="mx-auto max-w-content">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+      <!-- Left: intro + contact details -->
+      <div data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2 class="mt-5 text-4xl leading-tight text-ink sm:text-5xl">
+          Let&rsquo;s make something worth printing.
+        </h2>
+        <p class="mt-6 max-w-sm text-[15px] leading-relaxed text-ink/70">
+          Tell me a little about your project and I&rsquo;ll reply within two
+          business days with availability and a straightforward quote.
+        </p>
+
+        <dl class="mt-10 space-y-6">
+          <div>
+            <dt class="font-mono text-[11px] uppercase tracking-widest2 text-ink/45">Email</dt>
+            <dd class="mt-1">
+              <a href="mailto:hello@julianvoss.com" class="text-lg text-ink transition-colors hover:text-brass-600">
+                hello@julianvoss.com
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-mono text-[11px] uppercase tracking-widest2 text-ink/45">Phone</dt>
+            <dd class="mt-1">
+              <a href="tel:+351210000000" class="text-lg text-ink transition-colors hover:text-brass-600">
+                +351 21 000 0000
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-mono text-[11px] uppercase tracking-widest2 text-ink/45">Studio</dt>
+            <dd class="mt-1 text-lg text-ink">Lisbon, Portugal &mdash; available worldwide</dd>
+          </div>
+        </dl>
+
+        <div class="mt-10 flex gap-4">
+          {['Instagram', 'Behance', 'LinkedIn'].map((social) => (
+            <a
+              href="#"
+              class="rounded-full border border-ink/15 px-4 py-2 text-xs font-medium text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
+            >
+              {social}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div data-reveal style="transition-delay: 100ms;">
+        <form
+          class="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white p-8 shadow-card sm:p-10"
+          action="#"
+          method="POST"
+        >
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div class="sm:col-span-1">
+              <label for="name" class="mb-2 block font-mono text-[11px] uppercase tracking-widest2 text-ink/50">
+                Full name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                placeholder="Ana Costa"
+                class="w-full rounded-xl border border-ink/15 bg-stone-50 px-4 py-3 text-sm text-ink placeholder:text-ink/30 transition-colors focus:border-brass-500 focus:outline-none focus:ring-2 focus:ring-brass-200"
+              />
+            </div>
+
+            <div class="sm:col-span-1">
+              <label for="email" class="mb-2 block font-mono text-[11px] uppercase tracking-widest2 text-ink/50">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="ana@email.com"
+                class="w-full rounded-xl border border-ink/15 bg-stone-50 px-4 py-3 text-sm text-ink placeholder:text-ink/30 transition-colors focus:border-brass-500 focus:outline-none focus:ring-2 focus:ring-brass-200"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="project" class="mb-2 block font-mono text-[11px] uppercase tracking-widest2 text-ink/50">
+                Project type
+              </label>
+              <select
+                id="project"
+                name="project"
+                class="w-full appearance-none rounded-xl border border-ink/15 bg-stone-50 px-4 py-3 text-sm text-ink transition-colors focus:border-brass-500 focus:outline-none focus:ring-2 focus:ring-brass-200"
+              >
+                {projectTypes.map((type) => (
+                  <option>{type}</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message" class="mb-2 block font-mono text-[11px] uppercase tracking-widest2 text-ink/50">
+                Tell me about it
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Dates, location, the story you want told..."
+                class="w-full resize-none rounded-xl border border-ink/15 bg-stone-50 px-4 py-3 text-sm text-ink placeholder:text-ink/30 transition-colors focus:border-brass-500 focus:outline-none focus:ring-2 focus:ring-brass-200"
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary mt-8 w-full justify-center sm:w-auto">
+            Send message
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+
+          <p class="mt-4 text-xs text-ink/45">
+            By sending this form you agree to be contacted about your enquiry. No spam, ever.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector('#contact form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      if (button) {
+        const original = button.innerHTML;
+        button.innerHTML = 'Message sent — thank you';
+        button.setAttribute('disabled', 'true');
+        setTimeout(() => {
+          button.innerHTML = original;
+          button.removeAttribute('disabled');
+          form.reset();
+        }, 3200);
+      }
+    });
+  }
+</script>

@@ -1,0 +1,57 @@
+---
+---
+
+<section id="about" class="section-pad bg-stone-100 py-24 lg:py-32">
+  <div class="mx-auto grid max-w-content grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+    <div data-reveal class="order-2 lg:order-1">
+      <p class="eyebrow">About</p>
+      <h2 class="mt-5 max-w-md text-4xl leading-tight text-ink sm:text-5xl">
+        Light is the only language I trust completely.
+      </h2>
+
+      <div class="mt-8 space-y-5 text-[15px] leading-relaxed text-ink/70">
+        <p>
+          I grew up in a small print shop, watching my father coax color out
+          of stubborn negatives long after everyone else had gone digital.
+          That patience never left me. Today my work moves between
+          documentary reportage, editorial portraiture and quiet landscape
+          studies &mdash; always shot on location, always in available light.
+        </p>
+        <p>
+          My clients range from international magazines and heritage brands
+          to couples who want their wedding told like a short story rather
+          than a checklist of poses. Whatever the brief, the approach stays
+          the same: get close, wait for the honest moment, and only press
+          the shutter when the light agrees.
+        </p>
+        <p>
+          Based between Lisbon and wherever the next assignment happens to
+          be, I&rsquo;m usually booked two to three months out &mdash; but I
+          always make room for projects I believe in.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        {['Portraiture', 'Documentary', 'Architecture', 'Travel Editorial'].map((tag) => (
+          <span class="rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-widest2 text-ink/60">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div data-reveal class="order-1 lg:order-2">
+      <div class="relative overflow-hidden rounded-[2rem] shadow-card">
+        <img
+          src="/images/about-photo.png"
+          alt="Julian Voss on location, camera in hand, overlooking a valley"
+          class="aspect-[4/5] w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute bottom-5 left-5 rounded-xl bg-ink/70 px-4 py-2 font-mono text-[11px] uppercase tracking-widest2 text-stone-100 backdrop-blur-sm">
+          On assignment &mdash; Georgia
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

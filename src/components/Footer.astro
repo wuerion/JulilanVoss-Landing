@@ -1,0 +1,72 @@
+---
+const currentYear = new Date().getFullYear();
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#studies', label: 'Studies' },
+  { href: '#gallery', label: 'Gallery' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<footer class="section-pad bg-ink pt-20 text-stone-300">
+  <div class="mx-auto max-w-content">
+    <div class="grid grid-cols-1 gap-12 border-b border-white/10 pb-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#top" class="font-display text-2xl text-stone-50">
+          Julian <span class="italic text-brass-400">Voss</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-stone-400">
+          Editorial and documentary photography, shot on location across six
+          continents.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-widest2 text-stone-500">Navigate</p>
+        <ul class="mt-5 space-y-3">
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.href} class="text-sm text-stone-400 transition-colors hover:text-brass-300">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-widest2 text-stone-500">Studio</p>
+        <ul class="mt-5 space-y-3 text-sm text-stone-400">
+          <li>Lisbon, Portugal</li>
+          <li>
+            <a href="mailto:hello@julianvoss.com" class="transition-colors hover:text-brass-300">
+              hello@julianvoss.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+351210000000" class="transition-colors hover:text-brass-300">
+              +351 21 000 0000
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-widest2 text-stone-500">Follow</p>
+        <ul class="mt-5 space-y-3 text-sm text-stone-400">
+          <li><a href="#" class="transition-colors hover:text-brass-300">Instagram</a></li>
+          <li><a href="#" class="transition-colors hover:text-brass-300">Behance</a></li>
+          <li><a href="#" class="transition-colors hover:text-brass-300">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-4 py-8 text-xs text-stone-500 sm:flex-row">
+      <p>&copy; {currentYear} Julian Voss Photography. All rights reserved.</p>
+      <p>&copy; {currentYear} Diseñado y desarrollado por <a href="https://axvolestudio.com" target="_blank" rel="noopener noreferer">AXVOL estudio</a></p>
+    </div>
+  </div>
+</footer>

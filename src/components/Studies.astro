@@ -1,0 +1,80 @@
+---
+const studies = [
+  {
+    number: '01',
+    title: 'Urban Light',
+    meta: 'Prague, Czech Republic — 2023',
+    text: 'A study of old-town architecture at blue hour, where centuries-old facades hold the last warmth of the sky before the streetlamps take over.',
+  },
+  {
+    number: '02',
+    title: 'Silence of the Alps',
+    meta: 'South Tyrol, Italy — 2022',
+    text: 'Six weeks tracing fog through alpine valleys, looking for the moment mist and grassland become indistinguishable from one another.',
+  },
+  {
+    number: '03',
+    title: 'Coastal Traces',
+    meta: 'Azores, Portugal — 2021',
+    text: 'A slow, minimal series about where the Atlantic meets volcanic rock — shot entirely at dawn to keep the color out of the frame.',
+  },
+  {
+    number: '04',
+    title: 'Portraits, Unfiltered',
+    meta: 'Ongoing since 2019',
+    text: 'An open-ended collection of environmental portraits, each subject photographed in a space that shaped who they became.',
+  },
+];
+---
+
+<section id="studies" class="bg-ink py-24 text-stone-50 lg:py-32">
+  <div class="mx-auto grid max-w-content grid-cols-1 gap-14 section-pad lg:grid-cols-2 lg:gap-20">
+    <div data-reveal class="relative">
+      <div class="sticky top-28 overflow-hidden rounded-[2rem] shadow-card">
+        <img
+          src="/images/studies-photo.png"
+          alt="A historic building glowing at sunset between two street facades"
+          class="aspect-[4/5] w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div>
+      <div data-reveal>
+        <p class="eyebrow text-brass-300">Studies</p>
+        <h2 class="mt-5 max-w-md text-4xl leading-tight sm:text-5xl">
+          Long-form projects, shot on my own time.
+        </h2>
+        <p class="mt-5 max-w-md text-[15px] leading-relaxed text-stone-400">
+          Between commissions I keep a handful of personal studies running
+          &mdash; slower, self-directed work that keeps the editorial
+          projects honest.
+        </p>
+      </div>
+
+      <ol class="mt-12 divide-y divide-white/10 border-t border-white/10">
+        {
+          studies.map((s, i) => (
+            <li data-reveal style={`transition-delay: ${i * 90}ms;`} class="group grid grid-cols-[auto_1fr] gap-6 py-8">
+              <span class="font-mono text-sm text-brass-300">{s.number}</span>
+              <div>
+                <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                  <h3 class="font-display text-2xl text-stone-50 transition-colors group-hover:text-brass-300">
+                    {s.title}
+                  </h3>
+                  <span class="font-mono text-[11px] uppercase tracking-widest2 text-stone-500">
+                    {s.meta}
+                  </span>
+                </div>
+                <p class="mt-3 max-w-lg text-sm leading-relaxed text-stone-400">
+                  {s.text}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>
