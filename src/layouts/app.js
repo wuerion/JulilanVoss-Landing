@@ -9,8 +9,8 @@ document.addEventListener('mousemove', (e) => {
   const percentX = (e.clientX - rect.left) / rect.width;
   const percentY = (e.clientY - rect.top) / rect.height;
 
-  const tiltX = (0.5 - percentY) * 20
-  const moveY = (percentX - 0.5) * 30
+  const tiltX = (0.5 - percentY) * 5
+  const moveY = (percentX - 0.5) * 5
 
   container.style.transform = `rotateX(${tiltX}deg) rotateY(${moveY}deg)`
 })
