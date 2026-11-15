@@ -1,15 +1,13 @@
----
----
-
-<section id="about" class="section-pad bg-stone-100 py-24 lg:py-32">
-  <div class="mx-auto grid max-w-content grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
-    <div data-reveal class="order-2 lg:order-1">
-      <p class="eyebrow">About</p>
-      <h2 class="mt-5 max-w-md text-4xl leading-tight text-ink sm:text-5xl">
-        Light is the only language I trust completely.
-      </h2>
-
-      <div class="mt-8 space-y-5 text-[15px] leading-relaxed text-ink/70">
+<section id="about" class="section-pad bg-stone-100 py-4 md:py-24 lg:py-8 lg:h-dvh">
+  <div class="mx-auto max-w-content grid grid-cols-1 items-center gap-4 md:gap-14 lg:grid-cols-2 lg:gap-20 w-full h-full">
+    <div data-reveal class="order-2 lg:order-1 h-full max-h-[700px] 2xl:max-h-[900px] flex flex-col md:justify-center items-center ">
+      <div>
+        <p class="eyebrow ">About</p>
+        <h2 class="mt-2 text-xl lg:text-4xl leading-tight text-ink">
+          Light is the only language I trust completely.
+        </h2>
+      </div>
+      <div class="mt-2 md:mt-8 space-y-5 xl:space-y-10 text-[15px] leading-relaxed text-ink/70 flex flex-col">
         <p>
           I grew up in a small print shop, watching my father coax color out
           of stubborn negatives long after everyone else had gone digital.
@@ -31,24 +29,24 @@
         </p>
       </div>
 
-      <div class="mt-10 flex flex-wrap gap-3">
+      <div class=" mt-4 2xl:mt-10 flex flex-wrap gap-1 md:gap-3">
         {['Portraiture', 'Documentary', 'Architecture', 'Travel Editorial'].map((tag) => (
-          <span class="rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-widest2 text-ink/60">
+          <span class="rounded-full border border-ink/15 px-2 py-1 md:px-4 md:py-2 font-mono text-[12px] uppercase tracking-widest2 text-ink/60">
             {tag}
           </span>
         ))}
       </div>
     </div>
 
-    <div data-reveal class="order-1 lg:order-2 [perspective:1000px]">
-      <div class="relative overflow-hidden rounded-[2rem] shadow-card tilt-card">
+    <div data-reveal class="order-1 [perspective:1000px] lg:order-2 w-full max-h-[900px]">
+      <div class="relative overflow-hidden rounded-[2rem] tilt-card">
         <img
           src="/images/about-photo.png"
           alt="Julian Voss on location, camera in hand, overlooking a valley"
-          class="aspect-[4/5] w-full object-cover"
+          class="mx-auto object-cover w-full aspect-auto md:aspect-[3/5] xl:aspect-auto max-h-[700px] 2xl:max-h-[900px]"
           loading="lazy"
         />
-        <div class="absolute bottom-5 left-5 rounded-xl bg-ink/70 px-4 py-2 font-mono text-[11px] uppercase tracking-widest2 text-stone-100 backdrop-blur-sm">
+        <div class="absolute bottom-5 left-2 md:left-5 rounded-xl bg-ink/70 px-4 py-2 font-mono text-[11px] uppercase tracking-widest2 text-stone-100 backdrop-blur-sm">
           On assignment &mdash; Georgia
         </div>
       </div>
